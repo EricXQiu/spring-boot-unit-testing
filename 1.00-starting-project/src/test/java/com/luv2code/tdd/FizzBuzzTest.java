@@ -49,8 +49,20 @@ public class FizzBuzzTest {
     }
 
     @ParameterizedTest(name="value={0}, expected={1}")
+    @CsvFileSource(resources = "/small-test-data.csv")
+    void automatedTestWithSmallCsvFile(int value, String expected) {
+        assertEquals(expected, FizzBuzz.compute(value));
+    }
+
+    @ParameterizedTest(name="value={0}, expected={1}")
     @CsvFileSource(resources = "/medium-test-data.csv")
-    void automatedTestWithCsvFile(int value, String expected) {
+    void automatedTestWithMediumCsvFile(int value, String expected) {
+        assertEquals(expected, FizzBuzz.compute(value));
+    }
+
+    @ParameterizedTest(name="value={0}, expected={1}")
+    @CsvFileSource(resources = "/large-test-data.csv")
+    void automatedTestWithLargeCsvFile(int value, String expected) {
         assertEquals(expected, FizzBuzz.compute(value));
     }
 }
