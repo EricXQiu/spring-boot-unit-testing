@@ -49,7 +49,7 @@ public class FizzBuzzTest {
     }
 
     @ParameterizedTest(name="value={0}, expected={1}")
-    @CsvFileSource(resources = "/small-test-data.csv")
+    @CsvFileSource(resources = "/medium-test-data.csv")
     void automatedTestWithCsvFile(int value, String expected) {
         assertEquals(expected, FizzBuzz.compute(value));
     }
